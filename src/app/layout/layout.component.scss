@@ -1,0 +1,12 @@
+app-top-bar{
+    z-index: 2;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+mat-drawer-container{
+    position: absolute;
+    top: 64px;  
+    width: 100%;
+}

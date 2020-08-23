@@ -1,0 +1,37 @@
+<div class="padre container-fluid">
+  <div class="col-sm-6 col-md-6 col-lg-4">
+
+    <mat-card class="login-card mat-elevation-z8">
+
+        <div class="icon-container load-5 mat-elevation-z8">
+            <div class="ring-2" *ngIf="loading">
+                <div class="ball-holder">
+                  <div class="ball"></div>
+                </div>
+              </div>   
+        </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 log login-container">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>
+                <mat-icon>account_circle</mat-icon>Usuario
+              </mat-label>
+              <input matInput placeholder="Usuario" [(ngModel)]="credenciales.usuario">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>
+                <mat-icon>vpn_key</mat-icon>Contraseña
+              </mat-label>
+              <input matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'" [(ngModel)]="credenciales.password">
+                <mat-icon mat-icon-button matSuffix  (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </mat-form-field>
+            <p class="error" *ngIf="!response.success">{{response.message}}</p>
+            <button mat-raised-button color="primary" (click)="login()" [disabled]="loading">Ingresar</button>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>

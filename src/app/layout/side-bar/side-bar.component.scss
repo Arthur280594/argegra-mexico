@@ -1,0 +1,151 @@
+$primary: #ffa600;
+$secundary: #ffbf49;
+
+.slide {
+  width: 190px;
+  margin: 0 10px 0 10px;
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: .8rem;
+  margin: .75rem 0;
+  font-weight: bold;
+  color: $primary;
+  white-space: nowrap;
+  position: relative;
+}
+
+.collapsed {
+  background: #ffffff !important;
+  border-radius: 10px;
+
+  &:hover {
+    background: $secundary !important;
+    border-radius: 10px;
+  }
+
+  .arrow{
+    transform: rotate(-45deg) !important;
+    top: 10px !important; 
+  }
+}
+
+.menu {
+  width: 100%;
+  font-size: 16px;
+  color: grey;
+  cursor: pointer;
+  margin: 2px;
+  position: relative;
+  margin: 1.5rem 0 0 0;
+  display: flex;
+  align-items: center;
+  background: $secundary;
+  border-radius: 10px;
+
+  .name {
+    padding: 8px 0rem 0px 40px;
+  }
+
+  .icon {
+    text-indent: initial;
+    left: 14px;
+    margin-left: 0;
+    position: absolute;
+    font-size: 16px;
+
+  }
+
+  .arrow{
+    content: ' ';
+    width: 10px;
+    height: 10px;
+    border-left: solid 2px grey;
+    border-bottom: solid 2px grey;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    transform: rotate(136deg);
+  }
+
+}
+
+.simple-menu {
+  width: 100%;
+  font-size: 16px;
+  color: grey;
+  cursor: pointer;
+  margin: 2px;
+  position: relative;
+  margin: 1.5rem 0 0 0;
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 10px;
+
+  &:hover{
+    background: $secundary;
+  }
+
+  &_active{
+    background: $secundary;
+  }
+
+  .name {
+    padding: 8px 0rem 0px 40px;
+  }
+
+  .icon {
+    text-indent: initial;
+    left: 14px;
+    margin-left: 0;
+    position: absolute;
+    font-size: 16px;
+
+  }
+
+}
+
+.submenu {
+  padding: .5em 0 0 2rem;
+  position: relative;
+
+  .item {
+
+    margin-top: 10px;
+    padding: 5px;
+
+    &:hover {
+      background: $secundary !important;
+      border-radius: 10px;
+    }
+
+    &:before {
+      content: "";
+      display: block;
+      height: 3px;
+      opacity: 1;
+      width: 15px;
+      background: $secundary;
+      position: relative;
+      left: -15px;
+      top: 12px;
+      border-radius: 15px;
+    }
+  }
+
+
+  &:before {
+    content: '';
+    display: block;
+    height: calc(100% - 17px);
+    opacity: 1;
+    width: 3px;
+    background: $secundary;
+    position: absolute;
+    left: 20px;
+    top: 0;
+    border-radius: 15px;
+  }
+}
