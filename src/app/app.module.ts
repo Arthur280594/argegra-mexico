@@ -22,6 +22,11 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatCardModule} from '@angular/material/card';
 import { FamiliaComponent } from './pages/familia/familia.component';
 import { TipoAgenteComponent } from './pages/tipo-agente/tipo-agente.component';
+import { EspecieComponent } from './pages/especie/especie.component';
+import { PadronAcuicolaComponent } from './pages/padron-acuicola/padron-acuicola.component';
+import { UsuariosComponent } from './pages/usuarios/usuarios.component';
+import { FormatoAComponent } from './pages/formato-a/formato-a.component';
+import { FormatoBComponent } from './pages/formato-b/formato-b.component';
 
 const avatarColors = ["#ff8340"];
 
@@ -33,7 +38,12 @@ const avatarColors = ["#ff8340"];
     SideBarComponent,
     ContentComponent,
     FamiliaComponent,
-    TipoAgenteComponent
+    TipoAgenteComponent,
+    EspecieComponent,
+    PadronAcuicolaComponent,
+    UsuariosComponent,
+    FormatoAComponent,
+    FormatoBComponent
   ],
   imports: [
     BrowserModule,
