@@ -20,6 +20,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import { AvatarModule } from "ngx-avatar";
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatCardModule} from '@angular/material/card';
+import { FamiliaComponent } from './pages/familia/familia.component';
+import { TipoAgenteComponent } from './pages/tipo-agente/tipo-agente.component';
 
 const avatarColors = ["#ff8340"];
 
@@ -29,7 +31,9 @@ const avatarColors = ["#ff8340"];
     LayoutComponent,
     TopBarComponent,
     SideBarComponent,
-    ContentComponent
+    ContentComponent,
+    FamiliaComponent,
+    TipoAgenteComponent
   ],
   imports: [
     BrowserModule,
