@@ -128,8 +128,6 @@
           }
         }
       }
-    }
-  "defaultProject": "argegra-mexico",
-  "cli": {
-  }
+    }},
+  "defaultProject": "argegra-mexico"
 }
