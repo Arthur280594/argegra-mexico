@@ -22,6 +22,11 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatCardModule} from '@angular/material/card';
 import { FamiliaComponent } from './pages/familia/familia.component';
 import { TipoAgenteComponent } from './pages/tipo-agente/tipo-agente.component';
+import { TipoAnalisisComponent } from './pages/tipo-analisis/tipo-analisis.component';
+import { TipoUsuarioComponent } from './pages/tipo-usuario/tipo-usuario.component';
+import { AgentePatogenoComponent } from './pages/agente-patogeno/agente-patogeno.component';
+import { EntidadFederativaComponent } from './pages/entidad-federativa/entidad-federativa.component';
+import { EnfermedadesComponent } from './pages/enfermedades/enfermedades.component';
 
 const avatarColors = ["#ff8340"];
 
@@ -33,7 +38,12 @@ const avatarColors = ["#ff8340"];
     SideBarComponent,
     ContentComponent,
     FamiliaComponent,
-    TipoAgenteComponent
+    TipoAgenteComponent,
+    TipoAnalisisComponent,
+    TipoUsuarioComponent,
+    AgentePatogenoComponent,
+    EntidadFederativaComponent,
+    EnfermedadesComponent
   ],
   imports: [
     BrowserModule,
