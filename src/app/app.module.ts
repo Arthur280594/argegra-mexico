@@ -27,6 +27,11 @@ import { TipoUsuarioComponent } from './pages/tipo-usuario/tipo-usuario.componen
 import { AgentePatogenoComponent } from './pages/agente-patogeno/agente-patogeno.component';
 import { EntidadFederativaComponent } from './pages/entidad-federativa/entidad-federativa.component';
 import { EnfermedadesComponent } from './pages/enfermedades/enfermedades.component';
+import { EspecieComponent } from './pages/especie/especie.component';
+import { PadronAcuicolaComponent } from './pages/padron-acuicola/padron-acuicola.component';
+import { UsuariosComponent } from './pages/usuarios/usuarios.component';
+import { FormatoAComponent } from './pages/formato-a/formato-a.component';
+import { FormatoBComponent } from './pages/formato-b/formato-b.component';
 
 const avatarColors = ["#ff8340"];
 
@@ -43,7 +48,12 @@ const avatarColors = ["#ff8340"];
     TipoUsuarioComponent,
     AgentePatogenoComponent,
     EntidadFederativaComponent,
-    EnfermedadesComponent
+    EnfermedadesComponent,
+    EspecieComponent,
+    PadronAcuicolaComponent,
+    UsuariosComponent,
+    FormatoAComponent,
+    FormatoBComponent
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,11 @@ import { TipoUsuarioComponent } from './pages/tipo-usuario/tipo-usuario.componen
 import { EntidadFederativaComponent } from './pages/entidad-federativa/entidad-federativa.component';
 import { EnfermedadesComponent } from './pages/enfermedades/enfermedades.component';
 
+import { EspecieComponent} from './pages/especie/especie.component';
+import { PadronAcuicolaComponent } from './pages/padron-acuicola/padron-acuicola.component';
+import { UsuariosComponent } from './pages/usuarios/usuarios.component';
+import { FormatoAComponent } from './pages/formato-a/formato-a.component';
+import { FormatoBComponent } from './pages/formato-b/formato-b.component';
 
 const routes: Routes = [
   {
@@ -45,7 +50,27 @@ const routes: Routes = [
     {
       path: "enfermedades",
       component: EnfermedadesComponent
-    }
+    },
+    {
+        path: "especie",
+        component: EspecieComponent
+      },
+      {
+        path: "acuicola",
+        component: PadronAcuicolaComponent
+      },
+      {
+        path: "usuarios",
+        component: UsuariosComponent
+      },
+      {
+        path: "formato a",
+        component: FormatoAComponent
+      }, {
+        path: "formato b",
+        component: FormatoBComponent
+      }
+
     ]
   }
 ];

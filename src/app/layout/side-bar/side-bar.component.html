@@ -34,8 +34,8 @@
     </div>
 
     <div id="collapseTwo" class="submenu collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-      <div class="item">Padron acuicola</div>
-      <div class="item">Usuarios</div>
+      <div class="item" [routerLink]="['/acuicola']" routerLinkActive="router-link-active">Padron acuicola</div>
+      <div class="item" [routerLink]="['/usuarios']" routerLinkActive="router-link-active">Usuarios</div>
     </div>
 
 
@@ -49,8 +49,8 @@
     </div>
 
     <div id="collapseTree" class="submenu collapse" aria-labelledby="headingTree" data-parent="#accordion">
-      <div class="item">Formato 1A</div>
-      <div class="item">Formato 1B</div>
+      <div class="item" [routerLink]="['/formato a']" routerLinkActive="router-link-active">Formato 1A</div>
+      <div class="item" [routerLink]="['/formato b']" routerLinkActive="router-link-active">Formato 1B</div>
     </div>
 
 
