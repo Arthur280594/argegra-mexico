@@ -13,6 +13,7 @@ import { PadronAcuicolaComponent } from './pages/padron-acuicola/padron-acuicola
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { FormatoAComponent } from './pages/formato-a/formato-a.component';
 import { FormatoBComponent } from './pages/formato-b/formato-b.component';
+import { AgentePatogenoComponent } from './pages/agente-patogeno/agente-patogeno.component';
 
 const routes: Routes = [
   {
@@ -29,7 +30,7 @@ const routes: Routes = [
       },
       {
         path: "agente",
-        component: TipoAgenteComponent
+        component: AgentePatogenoComponent
       },
       {
         path: "analisis",
@@ -40,7 +41,7 @@ const routes: Routes = [
          component: TipoUsuarioComponent
     },
     {
-      path: "agente",
+      path: "tipo_agente",
       component: TipoAgenteComponent
     },
     {
@@ -50,6 +51,10 @@ const routes: Routes = [
     {
       path: "enfermedades",
       component: EnfermedadesComponent
+    },
+    {
+      path: "agente",
+      component: AgentePatogenoComponent
     },
     {
         path: "especie",
@@ -64,10 +69,10 @@ const routes: Routes = [
         component: UsuariosComponent
       },
       {
-        path: "formato a",
+        path: "formato_a",
         component: FormatoAComponent
       }, {
-        path: "formato b",
+        path: "formato_b",
         component: FormatoBComponent
       }
 
