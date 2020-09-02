@@ -32,6 +32,7 @@ import { PadronAcuicolaComponent } from './pages/padron-acuicola/padron-acuicola
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { FormatoAComponent } from './pages/formato-a/formato-a.component';
 import { FormatoBComponent } from './pages/formato-b/formato-b.component';
+import { MatButtonModule } from '@angular/material/button';
 
 const avatarColors = ["#ff8340"];
 
@@ -71,7 +72,8 @@ const avatarColors = ["#ff8340"];
       colors: avatarColors
     }),
     MatExpansionModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
