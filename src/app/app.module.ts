@@ -18,8 +18,14 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatMenuModule} from '@angular/material/menu';
 import { AvatarModule } from "ngx-avatar";
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatCardModule} from '@angular/material/card';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+
 import { FamiliaComponent } from './pages/familia/familia.component';
 import { TipoAgenteComponent } from './pages/tipo-agente/tipo-agente.component';
 import { TipoAnalisisComponent } from './pages/tipo-analisis/tipo-analisis.component';
@@ -33,6 +39,7 @@ import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { FormatoAComponent } from './pages/formato-a/formato-a.component';
 import { FormatoBComponent } from './pages/formato-b/formato-b.component';
 import { MatButtonModule } from '@angular/material/button';
+import { DialogAgentePatogenoComponent } from './dialog/dialog-agente-patogeno/dialog-agente-patogeno.component';
 
 const avatarColors = ["#ff8340"];
 
@@ -54,7 +61,8 @@ const avatarColors = ["#ff8340"];
     PadronAcuicolaComponent,
     UsuariosComponent,
     FormatoAComponent,
-    FormatoBComponent
+    FormatoBComponent,
+    DialogAgentePatogenoComponent
   ],
   imports: [
     BrowserModule,
@@ -73,7 +81,12 @@ const avatarColors = ["#ff8340"];
     }),
     MatExpansionModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule,
+    MatGridListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
