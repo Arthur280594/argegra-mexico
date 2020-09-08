@@ -86,8 +86,7 @@ const avatarColors = ["#ff8340"];
     MatGridListModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule,
-    MatButtonModule
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
