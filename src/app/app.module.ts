@@ -40,8 +40,6 @@ import { FormatoAComponent } from './pages/formato-a/formato-a.component';
 import { FormatoBComponent } from './pages/formato-b/formato-b.component';
 import { MatButtonModule } from '@angular/material/button';
 import { DialogAgentePatogenoComponent } from './dialog/dialog-agente-patogeno/dialog-agente-patogeno.component';
-import { DialogFamiliaComponent } from './dialog/dialog-familia/dialog-familia.component';
-import { DialogFormato1aComponent } from './dialog/dialog-formato1a/dialog-formato1a.component';
 
 const avatarColors = ["#ff8340"];
 
@@ -64,9 +62,7 @@ const avatarColors = ["#ff8340"];
     UsuariosComponent,
     FormatoAComponent,
     FormatoBComponent,
-    DialogAgentePatogenoComponent,
-    DialogFamiliaComponent,
-    DialogFormato1aComponent
+    DialogAgentePatogenoComponent
   ],
   imports: [
     BrowserModule,
