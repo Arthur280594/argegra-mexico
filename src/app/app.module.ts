@@ -41,6 +41,10 @@ import { FormatoBComponent } from './pages/formato-b/formato-b.component';
 import { MatButtonModule } from '@angular/material/button';
 import { DialogAgentePatogenoComponent } from './dialog/dialog-agente-patogeno/dialog-agente-patogeno.component';
 import { DialogFormato1aComponent } from './dialog/dialog-formato1a/dialog-formato1a.component';
+import { DialogEspecieComponent } from './dialog/dialog-especie/dialog-especie.component';
+import { DialogPadronAcuicolaComponent } from './dialog/dialog-padron-acuicola/dialog-padron-acuicola.component';
+import { DialogUsuariosComponent } from './dialog/dialog-usuarios/dialog-usuarios.component';
+import { DialogFormatoBComponent } from './dialog/dialog-formato-b/dialog-formato-b.component';
 
 const avatarColors = ["#ff8340"];
 
@@ -64,7 +68,11 @@ const avatarColors = ["#ff8340"];
     FormatoAComponent,
     FormatoBComponent,
     DialogAgentePatogenoComponent,
-    DialogFormato1aComponent
+    DialogFormato1aComponent,
+    DialogEspecieComponent,
+    DialogPadronAcuicolaComponent,
+    DialogUsuariosComponent,
+    DialogFormatoBComponent
   ],
   imports: [
     BrowserModule,
