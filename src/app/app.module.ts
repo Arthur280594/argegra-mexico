@@ -45,6 +45,14 @@ import { DialogEspecieComponent } from './dialog/dialog-especie/dialog-especie.c
 import { DialogPadronAcuicolaComponent } from './dialog/dialog-padron-acuicola/dialog-padron-acuicola.component';
 import { DialogUsuariosComponent } from './dialog/dialog-usuarios/dialog-usuarios.component';
 import { DialogFormatoBComponent } from './dialog/dialog-formato-b/dialog-formato-b.component';
+import { DialogFamiliaComponent } from './dialog/dialog-familia/dialog-familia.component';
+import { DialogTipoAgenteComponent } from './dialog/dialog-tipo-agente/dialog-tipo-agente.component';
+import { DialogTipoAnalisisComponent } from './dialog/dialog-tipo-analisis/dialog-tipo-analisis.component';
+import { DialogTipoUsuariosComponent } from './dialog/dialog-tipo-usuarios/dialog-tipo-usuarios.component';
+import { DialogEntidadFederativaComponent } from './dialog/dialog-entidad-federativa/dialog-entidad-federativa.component';
+import { DialogEnfermedadesComponent } from './dialog/dialog-enfermedades/dialog-enfermedades.component';
+import { from } from 'rxjs';
+
 
 const avatarColors = ["#ff8340"];
 
@@ -72,7 +80,13 @@ const avatarColors = ["#ff8340"];
     DialogEspecieComponent,
     DialogPadronAcuicolaComponent,
     DialogUsuariosComponent,
-    DialogFormatoBComponent
+    DialogFormatoBComponent,
+    DialogFamiliaComponent,
+    DialogTipoAgenteComponent,
+    DialogTipoAnalisisComponent,
+    DialogTipoUsuariosComponent,
+    DialogEntidadFederativaComponent,
+    DialogEnfermedadesComponent,
   ],
   imports: [
     BrowserModule,

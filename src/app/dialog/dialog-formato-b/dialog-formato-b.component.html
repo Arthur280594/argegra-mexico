@@ -1,67 +1,60 @@
-<div class="row">
-    <div class="col-8">
-      <h2 mat-dialog-title class="modal-form__title">Formato 1b </h2>
-    </div>
-    <div class="col-4">
-      <mat-icon [mat-dialog-close]="true" style="cursor:pointer">close</mat-icon>
-    </div>
-  </div>
-  
-  <mat-dialog-content class="mat-typography">
-    <mat-grid-list cols="3" rowHeight="100px">
-      <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <mat-form-field appearance="legacy">
-          <mat-label>N° Visitas</mat-label>
-          <input matInput placeholder="N° Visitas">
-        </mat-form-field>
-      </mat-grid-tile>
+<div style="display: flex; justify-content: space-between;">
 
-    
-  <mat-dialog-content class="mat-typography">
-    <mat-grid-list cols="3" rowHeight="100px">
-      <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <mat-form-field appearance="legacy">
-          <mat-label>Fecha</mat-label>
-          <input matInput placeholder="Fecha">
-        </mat-form-field>
-      </mat-grid-tile>
+  <h2 mat-dialog-title class="modal-form__title">Formato 1B </h2>
 
-      
-  <mat-dialog-content class="mat-typography">
-    <mat-grid-list cols="3" rowHeight="100px">
-      <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <mat-form-field appearance="legacy">
-          <mat-label>Observaciones</mat-label>
-          <input matInput placeholder="Observaciones">
-        </mat-form-field>
-      </mat-grid-tile>
-  
-  
-      <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <mat-form-field appearance="fill">
-          <mat-label>Entidad Federativa</mat-label>
-          <mat-select required>
-            <mat-option [value]="1">1</mat-option>
-            <mat-option [value]="2">2</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </mat-grid-tile>
-  
-      <mat-grid-tile [colspan]="1" [rowspan]="1">
-          <mat-form-field appearance="fill">
-            <mat-label>Padrón Acuícola</mat-label>
-            <mat-select required>
-              <mat-option [value]="1">1</mat-option>
-              <mat-option [value]="2">2</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </mat-grid-tile>
-  
-  
-    </mat-grid-list>
-  </mat-dialog-content>
-  
-  <mat-dialog-actions align="end">
-    <button  mat-raised-button>Guardar</button>
-  </mat-dialog-actions>
+  <mat-icon [mat-dialog-close]="true" style="cursor:pointer">close</mat-icon>
+
+</div>
+
+<mat-dialog-content class="mat-typography">
+  <mat-grid-list cols="3" rowHeight="100px">
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-form-field appearance="legacy">
+        <mat-label>Entidad federativa</mat-label>
+        <input matInput placeholder="Entidad federativa">
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-form-field appearance="legacy">
+        <mat-label>N° de visitas</mat-label>
+        <input matInput placeholder="N° de visitas">
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-form-field appearance="legacy">
+        <mat-label>Entidad federativa</mat-label>
+        <mat-select required>
+          <mat-option [value]="1">1</mat-option>
+          <mat-option [value]="2">2</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-grid-tile>
+
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-form-field appearance="legacy">
+        <mat-label>Fecha</mat-label>
+        <input matInput placeholder="Fecha">
+      </mat-form-field>
+    </mat-grid-tile>
+
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-form-field appearance="legacy">
+        <mat-label>Observaciones</mat-label>
+        <input matInput placeholder="Observaciones">
+      </mat-form-field>
+    </mat-grid-tile>
+
+
+
+  </mat-grid-list>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button>Guardar</button>
+</mat-dialog-actions>
+
   

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogFamiliaComponent } from 'src/app/dialog/dialog-familia/dialog-familia.component';
 import { CrudService } from 'src/app/services/crud/crud.service';
 
 @Component({
@@ -8,7 +10,7 @@ import { CrudService } from 'src/app/services/crud/crud.service';
 })
 export class FamiliaComponent implements OnInit {
 
-  constructor(public crud: CrudService) { }
+  constructor( public _dialog: MatDialog, public crud: CrudService,) { }
 
   response:     any   = {};
   data:       any[]   = [];
@@ -24,5 +26,16 @@ export class FamiliaComponent implements OnInit {
     })
 
   }
+  opendialog(){
+    const dialogRef = this._dialog.open(DialogFamiliaComponent
+      , {
+        width: "55%"
+      });
+  
+      dialogRef.afterClosed().subscribe(result => {
+        
+      });
+    }
+  
+  }
 
-}

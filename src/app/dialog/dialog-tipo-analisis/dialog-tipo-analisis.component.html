@@ -1,0 +1,23 @@
+<div style="display: flex; justify-content: space-between;">
+    <h2 mat-dialog-title class="modal-form__title">Tipo Análisis</h2>
+
+    <mat-icon [mat-dialog-close]="true" style="cursor:pointer">close</mat-icon>
+
+</div>
+
+<mat-dialog-content class="mat-typography">
+  <mat-grid-list cols="3" rowHeight="100px">
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-form-field appearance="legacy">
+        <mat-label>Tipo Análisis</mat-label>
+        <input matInput placeholder="TIpo Análisis">
+      </mat-form-field>
+    </mat-grid-tile>
+    
+  </mat-grid-list>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button  mat-raised-button>Guardar</button>
+</mat-dialog-actions>
+

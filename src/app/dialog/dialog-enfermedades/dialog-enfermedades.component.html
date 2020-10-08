@@ -1,0 +1,45 @@
+<div style="display: flex; justify-content: space-between;">
+
+    <h2 mat-dialog-title class="modal-form__title">Enfermedades </h2>
+  
+    <mat-icon [mat-dialog-close]="true" style="cursor:pointer">close</mat-icon>
+    
+  </div>
+  
+  
+  <mat-dialog-content class="mat-typography">
+    <mat-grid-list cols="3" rowHeight="100px">
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-form-field appearance="legacy">
+          <mat-label>Enfermedad</mat-label>
+          <input matInput placeholder="Enfermedad">
+        </mat-form-field>
+      </mat-grid-tile>
+  
+      
+  
+  
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-form-field appearance="legacy">
+          <mat-label>Especie</mat-label>
+          <mat-select required>
+            <mat-option [value]="1">1</mat-option>
+            <mat-option [value]="2">2</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+  
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-form-field appearance="legacy">
+          <mat-label>Estado</mat-label>
+          <input matInput placeholder="Estado">
+        </mat-form-field>
+      </mat-grid-tile>
+
+    </mat-grid-list>
+  </mat-dialog-content>
+  
+  <mat-dialog-actions align="end">
+    <button mat-raised-button>Guardar</button>
+  </mat-dialog-actions>
+  
