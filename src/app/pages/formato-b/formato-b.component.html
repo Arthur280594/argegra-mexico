@@ -12,16 +12,16 @@
             <thead>
               <tr>
                 <th scope="col"></th>
-                <th scope="col">Id</th>
-                <th scope="col">Entidad Federativa</th>
-                <th scope="col">N° de Visitas</th>
-                <th scope="col">Padrón Acuícola</th>
-                <th scope="col">Fecha</th>
-                <th scope="col">Observaciones</th>
+                <th scope="col" (click)="sort('id')">Id&nbsp;<i class="fa fa-sort"></i></th>
+                <th scope="col" (click)="sort('entidad federativa')">Id&nbsp;<i class="fa fa-sort"></i></th>
+                <th  scope="col" (click)="sort('n° de visitas')">N° de visitas&nbsp;<i class="fa fa-sort"></i></th>
+                <th scope="col" (click)="sort('Padron acuicola')">Padrón Acuícola&nbsp;<i class="fa fa-sort"></i></th>
+                <th scope="col" (click)="sort('fecha')">Fecha&nbsp;<i class="fa fa-sort"></i></th>
+                <th scope="col" (click)="sort('Observaciones')">Observaciones&nbsp;<i class="fa fa-sort"></i></th>
               </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let item of data">
+                <tr *ngFor="let item of data | paginate: { itemsPerPage: 15, currentPage: p } | orderBy: key: reverse">
                   <td>
                     <button mat-icon-button color="primary">
                         <mat-icon>create</mat-icon>
@@ -38,9 +38,9 @@
                   <td>{{ item.observaciones }}</td>
                 </tr>
                 <tr>
-                  <td colspan="7" class="center">Paginacion</td>
                 </tr>
               </tbody>
         </table>
+        <pagination-controls (pageChange)="p = $event" class="center"></pagination-controls>
     </div>
 </div>

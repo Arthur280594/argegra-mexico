@@ -13,6 +13,7 @@ export class EntidadFederativaComponent implements OnInit {
   constructor(public _dialog: MatDialog, public crud: CrudService) { }
   response:     any   = {};
   data:       any[]   = [];
+  p: number = 1;
 
   ngOnInit(): void { 
     this.crud.get("entidad_federativa").then(m => {
@@ -24,6 +25,12 @@ export class EntidadFederativaComponent implements OnInit {
   })
 
 }
+key: string = 'id';
+  reverse: boolean = false;
+  sort (key) {
+    this.key = key;
+    this.reverse = !this.reverse;
+  }
 opendialog(){
   const dialogRef = this._dialog.open(DialogEntidadFederativaComponent, {
     width: "60%"

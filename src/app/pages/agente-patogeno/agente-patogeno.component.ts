@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { FilterPipe } from 'ngx-filter-pipe';
 import { DialogAgentePatogenoComponent } from 'src/app/dialog/dialog-agente-patogeno/dialog-agente-patogeno.component';
 import { CrudService } from 'src/app/services/crud/crud.service';
 
@@ -10,10 +11,14 @@ import { CrudService } from 'src/app/services/crud/crud.service';
 })
 export class AgentePatogenoComponent implements OnInit {
 
-  constructor(public _dialog: MatDialog, public crud: CrudService,) { }
+  constructor(public _dialog: MatDialog, public crud: CrudService, private filterPipe: FilterPipe,) {
+    console.log(filterPipe.transform(this.data, { nombre: ''}));
+   }
 
   response:     any   = {};
   data:       any[]   = [];
+  dataFilter: any = { nombre: '' };
+  p: number = 1;
   ngOnInit(): void {
 
     this.crud.get("agente_patogeno").then(m => {
@@ -23,6 +28,14 @@ export class AgentePatogenoComponent implements OnInit {
         this.data = this.response.data;
       }
     })
+  }
+  
+
+  key: string = 'id';
+  reverse: boolean = false;
+  sort (key) {
+    this.key = key;
+    this.reverse = !this.reverse;
   }
 
   opendialog(){

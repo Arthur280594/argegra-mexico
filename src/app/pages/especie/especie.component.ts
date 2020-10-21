@@ -14,6 +14,7 @@ export class EspecieComponent implements OnInit {
 
   response:     any   = {};
   data:       any[]   = [];
+  p: number = 1;
 
   ngOnInit(): void {
     this.crud.get("especie").then(m => {
@@ -23,6 +24,12 @@ export class EspecieComponent implements OnInit {
         this.data = this.response.data;
       }
     })
+  }
+  key: string = 'id';
+  reverse: boolean = false;
+  sort (key) {
+    this.key = key;
+    this.reverse = !this.reverse;
   }
 
   opendialog(){

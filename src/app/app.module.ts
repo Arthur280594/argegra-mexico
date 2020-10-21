@@ -51,7 +51,13 @@ import { DialogTipoAnalisisComponent } from './dialog/dialog-tipo-analisis/dialo
 import { DialogTipoUsuariosComponent } from './dialog/dialog-tipo-usuarios/dialog-tipo-usuarios.component';
 import { DialogEntidadFederativaComponent } from './dialog/dialog-entidad-federativa/dialog-entidad-federativa.component';
 import { DialogEnfermedadesComponent } from './dialog/dialog-enfermedades/dialog-enfermedades.component';
+import { NgxPaginationModule} from 'ngx-pagination'; //modulo de paginación
+import { OrderModule } from 'ngx-order-pipe';
 import { from } from 'rxjs';
+//import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { FormsModule } from '@angular/forms';
+import { FilterPipeModule } from 'ngx-filter-pipe';
+
 
 
 const avatarColors = ["#ff8340"];
@@ -90,6 +96,11 @@ const avatarColors = ["#ff8340"];
   ],
   imports: [
     BrowserModule,
+    FilterPipeModule,
+    FormsModule,
+    NgxPaginationModule,
+    //Ng2SearchPipeModule,
+    OrderModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,

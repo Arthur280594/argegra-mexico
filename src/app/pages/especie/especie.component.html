@@ -12,14 +12,14 @@
             <thead>
               <tr>
                 <th scope="col"></th>
-                <th scope="col">Id</th>
-                <th scope="col">Nombre Común</th>
-                <th scope="col">Nombre Científico</th>
-                <th scope="col">Familia</th>
+                <th scope="col" (click)="sort('id')">Id&nbsp;<i class="fa fa-sort"></i></th>
+                <th scope="col" (click)="sort('Nombre comun')">Nombre Común&nbsp;<i class="fa fa-sort"></i></th>
+                <th scope="col" (click)="sort('nombre cientifico')">Nombre Científico&nbsp;<i class="fa fa-sort"></i></th>
+                <th scope="col" (click)="sort('Familia')">Familia&nbsp;<i class="fa fa-sort"></i></th>
               </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let item of data">
+                <tr *ngFor="let item of data | paginate: { itemsPerPage: 10, currentPage: p } | orderBy: key: reverse">
                   <td>
                     <button mat-icon-button color="primary">
                         <mat-icon>create</mat-icon>
@@ -33,9 +33,9 @@
                   <td>{{ item.nombre }}</td>
                 </tr>
                 <tr>
-                  <td colspan="5" class="center">Paginacion</td>
                 </tr>
               </tbody>
         </table>
+        <pagination-controls (pageChange)="p = $event" class="center"></pagination-controls>
     </div>
 </div>

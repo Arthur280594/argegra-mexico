@@ -13,7 +13,8 @@ export class FamiliaComponent implements OnInit {
   constructor( public _dialog: MatDialog, public crud: CrudService,) { }
 
   response:     any   = {};
-  data:       any[]   = [];
+  data:       any[]   = []; 
+  p: number = 1;
 
   ngOnInit(): void {
 
@@ -26,6 +27,13 @@ export class FamiliaComponent implements OnInit {
     })
 
   }
+  key: string = 'id';
+  reverse: boolean = false;
+  sort (key) {
+    this.key = key;
+    this.reverse = !this.reverse;
+  }
+
   opendialog(){
     const dialogRef = this._dialog.open(DialogFamiliaComponent
       , {

@@ -13,6 +13,7 @@ export class TipoUsuarioComponent implements OnInit {
   constructor(public _dialog: MatDialog, public crud: CrudService) { }
   response:     any   = {};
   data:       any[]   = [];
+  p: number = 1;
 
   ngOnInit(): void {
 
@@ -24,6 +25,12 @@ export class TipoUsuarioComponent implements OnInit {
       }
     })
 
+  }
+  key: string = 'id';
+  reverse: boolean = false;
+  sort (key) {
+    this.key = key;
+    this.reverse = !this.reverse;
   }
   opendialog(){
     const dialogRef = this._dialog.open(DialogTipoUsuariosComponent, {
