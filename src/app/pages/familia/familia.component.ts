@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogFamiliaComponent } from 'src/app/dialog/dialog-familia/dialog-familia.component';
 import { CrudService } from 'src/app/services/crud/crud.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-familia',
@@ -52,5 +53,40 @@ export class FamiliaComponent implements OnInit {
       });
     }
   
+    delete(item){
+      Swal.fire({
+        title: 'Estas a punto de eliminar',
+        text: "Estas seguro de eliminar "+item.nombre,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, Eliminar',
+        cancelButtonText: 'Cancelar'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.crud.post('delete_familia',item).then(r => {
+            console.log(r)
+            let response:any = r;
+              if(response.success){
+                Swal.fire({
+                  icon: "success",
+                  title: 'Exito',
+                  text: response.message
+                })
+                this.ngOnInit();
+            }else{
+              Swal.fire({
+                icon: "error",
+                title: 'Error',
+                text: response.message
+              })
+            }
+          })
+        }
+      })
+      
+      
+    }
   }
 
