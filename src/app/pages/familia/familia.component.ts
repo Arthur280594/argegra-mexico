@@ -34,14 +34,21 @@ export class FamiliaComponent implements OnInit {
     this.reverse = !this.reverse;
   }
 
-  opendialog(){
+  opendialog(item){
+
+    if(item == null){
+      item = {
+        id_familia : 0
+      }
+    }
     const dialogRef = this._dialog.open(DialogFamiliaComponent
       , {
+        data: item, 
         width: "55%"
       });
   
       dialogRef.afterClosed().subscribe(result => {
-        
+        this.ngOnInit();
       });
     }
   
