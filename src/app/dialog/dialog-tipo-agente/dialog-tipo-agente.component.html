@@ -10,7 +10,7 @@
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Tipo Agente</mat-label>
-        <input matInput placeholder="TIpo Agente">
+        <input matInput placeholder="TIpo Agente" [(ngModel)]="data.nombre">
       </mat-form-field>
     </mat-grid-tile>
 
@@ -19,6 +19,6 @@
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">
-  <button  mat-raised-button>Guardar</button>
+  <button  mat-raised-button (click)="guardar()">Guardar</button>
 </mat-dialog-actions>
 

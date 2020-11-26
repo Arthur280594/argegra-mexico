@@ -12,14 +12,14 @@
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Nombre Común</mat-label>
-        <input matInput placeholder="Nombre Común">
+        <input matInput placeholder="Nombre Común" [(ngModel)]="data.nombre_comun">
       </mat-form-field>
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Nombre Científico</mat-label>
-        <input matInput placeholder="Nombre Científico">
+        <input matInput placeholder="Nombre Científico" [(ngModel)]="data.nombre_cientifico">
       </mat-form-field>
     </mat-grid-tile>
 
@@ -27,9 +27,9 @@
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Familia</mat-label>
-        <mat-select required>
-          <mat-option [value]="1">1</mat-option>
-          <mat-option [value]="2">2</mat-option>
+        <mat-select required [(ngModel)]="data.id_familia">
+          <mat-option [value]="data.nombre"></mat-option>
+         
         </mat-select>
       </mat-form-field>
     </mat-grid-tile>
@@ -39,5 +39,5 @@
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">
-  <button mat-raised-button>Guardar</button>
+  <button mat-raised-button (click)="guardar()">Guardar</button>
 </mat-dialog-actions>

@@ -10,7 +10,7 @@
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Nombre</mat-label>
-        <input matInput placeholder="Nombre">
+        <input matInput placeholder="Nombre"  [(ngModel)]="data.nombre">
       </mat-form-field>
     </mat-grid-tile>
 
@@ -19,8 +19,7 @@
       <mat-form-field appearance="legacy">
         <mat-label>Tipo de agente</mat-label>
         <mat-select required>
-          <mat-option [value]="1">1</mat-option>
-          <mat-option [value]="2">2</mat-option>
+          <mat-option [value]="data.nombre" [(ngModel)]="data.id_tipo_agente"></mat-option>
         </mat-select>
       </mat-form-field>
     </mat-grid-tile>
@@ -29,8 +28,7 @@
         <mat-form-field appearance="legacy">
           <mat-label>Tipo Especie</mat-label>
           <mat-select required>
-            <mat-option [value]="1">1</mat-option>
-            <mat-option [value]="2">2</mat-option>
+            <mat-option [value]="1" [(ngModel)]="data.id_especie"></mat-option>
           </mat-select>
         </mat-form-field>
       </mat-grid-tile>
@@ -40,5 +38,5 @@
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">
-  <button  mat-raised-button>Guardar</button>
+  <button  mat-raised-button (click)="guardar()">Guardar</button>
 </mat-dialog-actions>
