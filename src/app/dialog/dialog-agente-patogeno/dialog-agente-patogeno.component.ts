@@ -13,10 +13,22 @@ export class DialogAgentePatogenoComponent implements OnInit {
   constructor(public dialogRef: MatDialogRef < any >,
     @Inject(MAT_DIALOG_DATA) public data: any,
     public _services: CrudService) { }
+    response:any;
+    tipo_agente:any []=[];
 
     ngOnInit(): void {
       console.log(this.data);
+
+      this._services.get("tipo_agente").then(m => {
+        this.response = m;
+        console.log(this.response);
+        if(this.response.success){
+          this.tipo_agente = this.response.data;
+        }
+      })
+  
     }
+    
    
     guardar(){
       this._services.post('post_agente_patogeno', this.data).then(r=>{

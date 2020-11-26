@@ -18,8 +18,8 @@
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Tipo de agente</mat-label>
-        <mat-select required>
-          <mat-option [value]="data.nombre" [(ngModel)]="data.id_tipo_agente"></mat-option>
+        <mat-select required [(ngModel)]="data.id_tipo_agente">
+          <mat-option *ngFor="let item of tipo_agente" [value]="item.id_tipo_agente" > {{item.nombre}}</mat-option>
         </mat-select>
       </mat-form-field>
     </mat-grid-tile>
