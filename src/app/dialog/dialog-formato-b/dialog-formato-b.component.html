@@ -1,5 +1,4 @@
 <div style="display: flex; justify-content: space-between;">
-
   <h2 mat-dialog-title class="modal-form__title">Formato 1B </h2>
 
   <mat-icon [mat-dialog-close]="true" style="cursor:pointer">close</mat-icon>
@@ -10,21 +9,23 @@
   <mat-grid-list cols="3" rowHeight="100px">
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
-        <mat-label>Entidad federativa</mat-label>
-        <input matInput placeholder="Entidad federativa">
-      </mat-form-field>
-    </mat-grid-tile>
-
-    <mat-grid-tile [colspan]="1" [rowspan]="1">
-      <mat-form-field appearance="legacy">
         <mat-label>N° de visitas</mat-label>
-        <input matInput placeholder="N° de visitas">
+        <input matInput placeholder="N° de visitas" [(ngModel)]="data.no_visitas">
       </mat-form-field>
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
-        <mat-label>Entidad federativa</mat-label>
+        <mat-label>Entidad Federativa</mat-label>
+        <mat-select [(ngModel)]="data.id_entidad_federativa" required>
+          <mat-option *ngFor="let item of entidad_federativa" [value]="item.id_entidad_federativa">{{item.nombre}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-grid-tile>
+   
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-form-field appearance="legacy">
+        <mat-label>Padrón Acuícola </mat-label>
         <mat-select required>
           <mat-option [value]="1">1</mat-option>
           <mat-option [value]="2">2</mat-option>
@@ -36,7 +37,7 @@
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Fecha</mat-label>
-        <input matInput placeholder="Fecha">
+        <input type="date" matInput placeholder="Fecha" [(ngModel)]="data.fecha">
       </mat-form-field>
     </mat-grid-tile>
 
@@ -44,7 +45,7 @@
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Observaciones</mat-label>
-        <input matInput placeholder="Observaciones">
+        <input matInput placeholder="Observaciones" [(ngModel)]="data.observaciones"> 
       </mat-form-field>
     </mat-grid-tile>
 
@@ -54,7 +55,7 @@
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">
-  <button mat-raised-button>Guardar</button>
+  <button  mat-raised-button (click)="guardar()">Guardar</button>
 </mat-dialog-actions>
 
   

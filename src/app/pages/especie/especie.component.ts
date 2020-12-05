@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { FilterPipe } from 'ngx-filter-pipe';
 import { DialogEspecieComponent } from 'src/app/dialog/dialog-especie/dialog-especie.component';
 import { CrudService } from 'src/app/services/crud/crud.service';
 import Swal from 'sweetalert2';
@@ -11,10 +12,13 @@ import Swal from 'sweetalert2';
 })
 export class EspecieComponent implements OnInit {
 
-  constructor(public _dialog: MatDialog, public crud:CrudService,) { }
+  constructor(public _dialog: MatDialog, public crud:CrudService, private filterPipe: FilterPipe,) {
+    console.log(filterPipe.transform(this.data, { nombre_comun: ''}));
+   }
 
   response:     any   = {};
   data:       any[]   = [];
+  dataFilter: any = { nombre_comun: '' };
   p: number = 1;
 
   ngOnInit(): void {

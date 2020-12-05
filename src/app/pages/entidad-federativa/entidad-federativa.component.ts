@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { FilterPipe } from 'ngx-filter-pipe';
 import { DialogEntidadFederativaComponent } from 'src/app/dialog/dialog-entidad-federativa/dialog-entidad-federativa.component';
 import { CrudService } from 'src/app/services/crud/crud.service';
 import Swal from 'sweetalert2';
@@ -11,9 +12,13 @@ import Swal from 'sweetalert2';
 })
 export class EntidadFederativaComponent implements OnInit {
 
-  constructor(public _dialog: MatDialog, public crud: CrudService) { }
+  constructor(public _dialog: MatDialog, public crud: CrudService, private filterPipe: FilterPipe,) { 
+    console.log(filterPipe.transform(this.data, { nombre: ''}));
+   }
+
   response:     any   = {};
   data:       any[]   = [];
+  dataFilter: any = { nombre: '' };
   p: number = 1;
 
   ngOnInit(): void { 
@@ -42,11 +47,11 @@ key: string = 'id';
   const dialogRef = this._dialog.open(DialogEntidadFederativaComponent
     , {
       data: item, 
-      width: "55%"
+      width: "45%"
     });
 
   dialogRef.afterClosed().subscribe(result => {
-    
+    this.ngOnInit();
   });
 }
 

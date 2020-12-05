@@ -27,8 +27,17 @@
     <mat-grid-tile [colspan]="1" [rowspan]="1">
         <mat-form-field appearance="legacy">
           <mat-label>Tipo Especie</mat-label>
-          <mat-select required>
-            <mat-option [value]="1" [(ngModel)]="data.id_especie"></mat-option>
+          <mat-select required [(ngModel)]="data.id_especie">
+            <mat-option *ngFor="let item of especie" [value]="item.id_especie" >{{item.nombre_comun}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-form-field appearance="legacy">
+          <mat-label>Tipo Especie Nombre Científico</mat-label>
+          <mat-select required [(ngModel)]="data.id_especie">
+            <mat-option *ngFor="let item of especie" [value]="item.id_especie" > {{item.nombre_cientifico}}</mat-option>
           </mat-select>
         </mat-form-field>
       </mat-grid-tile>
