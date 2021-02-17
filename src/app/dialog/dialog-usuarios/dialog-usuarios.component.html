@@ -72,7 +72,7 @@
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Tipo Usuario</mat-label>
-        <mat-select  [(ngModel)]="data.id" >
+        <mat-select  [(ngModel)]="data.tipo_usuario" >
           <mat-option *ngFor="let item of tipo_usuario" [value]="item.id">{{item.descripcion}}</mat-option>
         </mat-select>
       </mat-form-field>

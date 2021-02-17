@@ -1,76 +1,82 @@
 <div class="row">
   <div class="col-12 center">
     <br>
-    <button mat-raised-button color="primary" (click)="opendialog()">Nuevo registro</button>
+    <button mat-raised-button color="primary" (click)="opendialog(null)">Nuevo registro</button>
   </div>
-</div>
-
+</div><br>
+<input class="form-control" type="text" [(ngModel)]="dataFilter.folio" placeholder="Búsqueda">
 <div class="row">
   <div class="col-12">
     <br>
-    <table id="tabla1" class="table table-striped mat-elevation-z10">
+    <table id="table" class="table table-striped mat-elevation-z10">
       <thead>
         <tr>
           <th scope="col"></th>
-          <th scope="col">Id</th>
-          <th scope="col">Folio</th>
-          <th scope="col">Fecha</th>
-          <th scope="col">Especie</th>
-          <th scope="col">bacterias</th>
-          <th scope="col">Parásitos</th>
-          <th scope="col">Virus</th>
-          <th scope="col">Hongos</th>
-          <th scope="col">Laboratorio Presuntivo</th>
-          <th scope="col">Diágnostico Presuntivo</th>
-          <th scope="col">Laboratorio</th>
-          <th scope="col">Fecha Envio</th>
-          <th scope="col">Fecha Entrega</th>
-          <th scope="col">Prevalencia</th>
-          <th scope="col">Incidencia</th>
-          <th scope="col">Formato 1</th>
-          <th scope="col">Tipo Análisis</th>
-          <th scope="col">Enfermedad</th>
-          <th scope="col">Padrón Acuícola</th>
+          <th scope="col" (click)="sort('id')">Id&nbsp;<i class="fa fa-sort"></i></th>
+          <th scope="col" (click)="sort('folio')">Folio&nbsp;<i class="fa fa-sort"></i></th>
+          <th scope="col" (click)="sort('fecha')">Fecha&nbsp;<i class="fa fa-sort"></i></th>
+          <th scope="col" (click)="sort('especie')">Especie&nbsp;<i class="fa fa-sort"></i></th>
+          <th scope="col" (click)="sort('bacterias')">bacterias&nbsp;<i class="fa fa-sort"></i></th>
+          <th scope="col" (click)="sort('parasitos')">Parásitos&nbsp;<i class="fa fa-sort"></i></th>
+          <th scope="col" (click)="sort('virus')">Virus&nbsp;<i class="fa fa-sort"></i></th>
+          <th scope="col" (click)="sort('hongos')">Hongos&nbsp;<i class="fa fa-sort"></i></th>
+          <th scope="col" (click)="sort('laboratorio presuntivo')">Laboratorio Presuntivo&nbsp;<i class="fa fa-sort"></i></th>
+          <th scope="col" (click)="sort('diagnostico presuntivo')">Diágnostico Presuntivo&nbsp;<i class="fa fa-sort"></i></th>
+          <th scope="col" (click)="sort('laboratorio')">Laboratorio&nbsp;<i class="fa fa-sort"></i></th>
+          <th scope="col" (click)="sort('fecha envio')">Fecha Envio&nbsp;<i class="fa fa-sort"></i></th>
+          <th scope="col" (click)="sort('fecha entrega')">Fecha Entrega&nbsp;<i class="fa fa-sort"></i></th>
+          <th scope="col" (click)="sort('prevalencia')">Prevalencia&nbsp;<i class="fa fa-sort"></i></th>
+          <th scope="col" (click)="sort('incidencia')">Incidencia&nbsp;<i class="fa fa-sort"></i></th>
+          <th scope="col" (click)="sort('formato 1')">Formato 1&nbsp;<i class="fa fa-sort"></i></th>
+          <th scope="col" (click)="sort('tipo analisis')">Tipo Análisis&nbsp;<i class="fa fa-sort"></i></th>
+          <th scope="col" (click)="sort('enfermedad')">Enfermedad&nbsp;<i class="fa fa-sort"></i></th>
+          <th scope="col" (click)="sort('padron acuicola')">Padrón Acuícola&nbsp;<i class="fa fa-sort"></i></th>
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr  *ngFor="let item of data  | filterBy: dataFilter | paginate: { itemsPerPage: 25, currentPage: p } | orderBy: key: reverse ">
           <td>
-            <button mat-icon-button color="primary">
+            <button mat-icon-button color="primary" (click)="opendialog(item)">
               <mat-icon>create</mat-icon>
             </button>
-            <button mat-icon-button color="warn">
+            <button mat-icon-button color="warn" (click)='delete(item)'>
               <mat-icon>delete</mat-icon>
             </button>
           </td>
-          <td>1</td>
-          <td>lorem</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>{{ item.id_formato_1a }}</td>
+          <td>{{ item.folio }}</td>
+          <td>{{ item.fecha }}</td>
+          <td>{{ item.especie_nombre_comun }}</td>
+          <td>{{ item.bacterias }}</td>
+          <td>{{ item.paracitos }}</td>
+          <td>{{ item.virus }}</td>
+          <td>{{ item.hongos }}</td>
+          <td>{{ item.laboratorio_presuntivo }}</td>
+          <td>{{ item.diagnostico_presuntivo }}</td>
+          <td>{{ item.laboratorio_oficial }}</td>
+          <td>{{ item.fecha_envio }}</td>
+          <td>{{ item.fecha_entrega }}</td>
+          <td>{{ item.prevalencia }}</td>
+          <td>{{ item.incidencia }}</td>
+          <td>{{ item.formato_1acol }}</td>
+          <td>{{ item.nombre_tipo_analisis }}</td>
+          <td>{{ item.nombre_enfermedad }}</td>
+          <td>{{ item.oasa }}</td>
         </tr>
-        <tr>
-          <td colspan="20" class="center">Paginacion</td>
-        </tr>
+        
       </tbody>
     </table>
+    <button mat-icon-button color="warn" (click)="generarPDF()">imprimir</button>
+    <h5 class="text-center mx-auto" style="color: black;"  *ngIf="(data | filterBy: dataFilter).length === 0">
+      No se encontraron resultados
+    </h5>
+    <pagination-controls (pageChange)="p = $event" class="center"></pagination-controls>
   </div>
 </div>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.2.0/polyfills.umd.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.4/jspdf.plugin.autotable.min.js"></script>
 <script>
   $(document).ready(function () {
     $('#tabla1').stacktable();
