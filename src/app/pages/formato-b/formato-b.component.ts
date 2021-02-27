@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { FilterPipe } from 'ngx-filter-pipe';
 import { DialogFormatoBComponent } from 'src/app/dialog/dialog-formato-b/dialog-formato-b.component';
 import { CrudService } from 'src/app/services/crud/crud.service';
 import Swal from 'sweetalert2';
+import { PdfMakeWrapper, Table, Cell, Columns, Txt, Item, Img } from 'pdfmake-wrapper';
+import * as pdfFonts from 'pdfmake/build/vfs_fonts';
 
 @Component({
   selector: 'app-formato-b',
@@ -11,10 +14,13 @@ import Swal from 'sweetalert2';
 })
 export class FormatoBComponent implements OnInit {
 
-  constructor(public _dialog: MatDialog, public crud:CrudService,) { }
+  constructor(public _dialog: MatDialog, public crud:CrudService, private filterPipe: FilterPipe,) { 
+    console.log(filterPipe.transform(this.data, { entidad_federativa: ''}));
+  }
 
   response:     any   = {};
   data:       any[]   = [];
+  dataFilter: any = {entidad_federativa: '' };
   p: number = 1;
 
   ngOnInit(): void {
@@ -26,7 +32,36 @@ export class FormatoBComponent implements OnInit {
       }
     })
   }
+  async generarPDF(){
 
+    let tabla = [['Entidad Federativa', 'N° de visitas', 'Padrón Acuícola', 'Fecha', 'Observaciones']]
+  
+  for (let i = 0; i < this.data.length; i++) {
+                      const element = this.data[i];
+                      tabla.push([
+                          element.entidad_federativa,element.no_visitas, element.fecha,
+                          element.observaciones, element.oasa
+                      ])
+                  }
+  
+  console.log(tabla);
+                    // Set the fonts to use
+                  PdfMakeWrapper.setFonts(pdfFonts);
+  
+                  const pdf = new PdfMakeWrapper();
+          
+                  pdf.header('Formato 1B');
+                  pdf.pageMargins([30,30,30,30]);
+                  pdf.pageOrientation('portrait');
+                  pdf.pageSize('letter');
+                  pdf.defaultStyle({
+                      fontSize: 14,
+                      alignment: 'center'
+                  });
+                  pdf.add(new Table(tabla).layout('lightHorizontalLines').end);
+  
+                  pdf.create().download('Formato1b.pdf');
+   }
   key: string = 'id';
   reverse: boolean = false;
   sort (key) {

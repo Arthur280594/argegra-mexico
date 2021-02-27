@@ -6,7 +6,10 @@
 </div><br>
 <input class="form-control" type="text" [(ngModel)]="dataFilter.folio" placeholder="Búsqueda">
 <div class="row">
-  <div class="col-12">
+  <div class="col-12 center">
+    <button mat-icon-button color="warn" (click)='generarPDF()'>
+      <mat-icon>picture_as_pdf</mat-icon>
+    </button>
     <br>
     <table id="table" class="table table-striped mat-elevation-z10">
       <thead>
@@ -66,7 +69,7 @@
         
       </tbody>
     </table>
-    <button mat-icon-button color="warn" (click)="generarPDF()">imprimir</button>
+
     <h5 class="text-center mx-auto" style="color: black;"  *ngIf="(data | filterBy: dataFilter).length === 0">
       No se encontraron resultados
     </h5>

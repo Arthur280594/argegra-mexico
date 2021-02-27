@@ -60,6 +60,7 @@ export class FormatoAComponent implements OnInit {
   
                   const pdf = new PdfMakeWrapper();
   
+                  pdf.header('Formato 1a');
                   pdf.pageMargins([20,20,20,20]);
                   pdf.pageOrientation('landscape');
                   pdf.pageSize('A4');
