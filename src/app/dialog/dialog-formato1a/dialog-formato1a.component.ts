@@ -1,9 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
-<<<<<<< HEAD
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-=======
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
->>>>>>> cab5723f347b1c9cc3fade3d4a9a673527a40b4c
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CrudService } from 'src/app/services/crud/crud.service';
 import Swal from 'sweetalert2';
 
@@ -14,15 +12,12 @@ import Swal from 'sweetalert2';
 })
 export class DialogPadronAcuicolaComponent implements OnInit {
 
-<<<<<<< HEAD
- 
-=======
->>>>>>> cab5723f347b1c9cc3fade3d4a9a673527a40b4c
+
   constructor(public dialogRef: MatDialogRef < any >,
     @Inject(MAT_DIALOG_DATA) public data: any,
     public _services: CrudService) { }
     response:any;
-<<<<<<< HEAD
+
     tipo_agente:any []=[];
 
     ngOnInit(): void {
@@ -60,7 +55,7 @@ export class DialogPadronAcuicolaComponent implements OnInit {
       })
     }
   }
-=======
+
     especie:any []=[];
     tipo_analisis:any []=[];
     enfermedades:any []=[];
@@ -114,4 +109,4 @@ export class DialogPadronAcuicolaComponent implements OnInit {
     })
   }
 }
->>>>>>> cab5723f347b1c9cc3fade3d4a9a673527a40b4c
+
