@@ -57,6 +57,8 @@ import { from } from 'rxjs';
 //import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormsModule } from '@angular/forms';
 import { FilterPipeModule } from 'ngx-filter-pipe';
+import { MapaComponent } from './pages/mapa/mapa.component';
+import { GoogleMapsAngularModule } from 'google-maps-angular';
 
 
 
@@ -93,6 +95,7 @@ const avatarColors = ["#ff8340"];
     DialogTipoUsuariosComponent,
     DialogEntidadFederativaComponent,
     DialogEnfermedadesComponent,
+    MapaComponent,
   ],
   imports: [
     BrowserModule,
@@ -121,7 +124,8 @@ const avatarColors = ["#ff8340"];
     MatGridListModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    GoogleMapsAngularModule
   ],
   providers: [],
   bootstrap: [AppComponent]

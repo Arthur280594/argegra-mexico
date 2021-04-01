@@ -37,7 +37,7 @@
                   <td>{{item.oasa}}</td>
                   <td>{{item.registro}}</td>
                   <td>
-                    <p>{{item.especies}}</p>
+                    <p *ngFor="let especie of item.especies">{{especie.nombre_comun}}</p>
                   </td>
                   <td>{{item.direccion}}</td>
                   <td>{{item.latutud}}</td>
