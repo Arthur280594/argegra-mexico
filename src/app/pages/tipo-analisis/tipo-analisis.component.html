@@ -1,9 +1,10 @@
 <div class="row">
     <div class="col-12 center">
         <br>
-        <button mat-raised-button color="primary" (click)="opendialog()">Nuevo registro</button>
+        <button mat-raised-button color="primary" (click)="opendialog(null)">Nuevo registro</button>
     </div>
-</div>
+  </div> <br>
+  <input class="form-control" type="text" [(ngModel)]="dataFilter.nombre" placeholder="Búsqueda">
 
 <div class="row">
     <div class="col-12">
@@ -17,12 +18,12 @@
               </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let item of data | paginate: { itemsPerPage: 5, currentPage: p } | orderBy: key: reverse">
+                <tr *ngFor="let item of data | filterBy: dataFilter | paginate: { itemsPerPage: 5, currentPage: p } | orderBy: key: reverse">
                   <td>
-                    <button mat-icon-button color="primary">
+                    <button mat-icon-button color="primary" (click)="opendialog(item)">
                         <mat-icon>create</mat-icon>
                     </button>
-                    <button mat-icon-button color="warn">
+                    <button mat-icon-button color="warn" (click)='delete(item)'>
                         <mat-icon>delete</mat-icon>
                     </button>
                   </td>
@@ -33,6 +34,9 @@
                 </tr>
               </tbody>
         </table>
+        <h5 class="text-center mx-auto" style="color: black;"  *ngIf="(data | filterBy: dataFilter).length === 0">
+          No se encontraron resultados
+        </h5>
         <pagination-controls (pageChange)="p = $event" class="center"></pagination-controls>
     </div>
 </div>

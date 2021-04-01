@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { FilterPipe } from 'ngx-filter-pipe';
 import { DialogFamiliaComponent } from 'src/app/dialog/dialog-familia/dialog-familia.component';
 import { CrudService } from 'src/app/services/crud/crud.service';
 import Swal from 'sweetalert2';
@@ -11,10 +12,14 @@ import Swal from 'sweetalert2';
 })
 export class FamiliaComponent implements OnInit {
 
-  constructor( public _dialog: MatDialog, public crud: CrudService,) { }
+  constructor( public _dialog: MatDialog, public crud: CrudService, private filterPipe: FilterPipe,) { 
+    console.log(filterPipe.transform(this.data, { nombre: ''}));
+  }
+  
 
   response:     any   = {};
-  data:       any[]   = []; 
+  data:       any[]   = [];
+  dataFilter: any = { nombre: '' }; 
   p: number = 1;
 
   ngOnInit(): void {

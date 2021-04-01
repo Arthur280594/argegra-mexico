@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { FilterPipe } from 'ngx-filter-pipe';
 import { DialogTipoAgenteComponent } from 'src/app/dialog/dialog-tipo-agente/dialog-tipo-agente.component';
 import { CrudService } from 'src/app/services/crud/crud.service';
 import Swal from 'sweetalert2';
@@ -11,10 +12,13 @@ import Swal from 'sweetalert2';
 })
 export class TipoAgenteComponent implements OnInit {
 
-  constructor( public _dialog: MatDialog, public crud: CrudService,) { }
+  constructor( public _dialog: MatDialog, public crud: CrudService, private filterPipe: FilterPipe,) { 
+    console.log(filterPipe.transform(this.data, { nombre: ''}));
+   }
 
   response:     any   = {};
   data:       any[]   = [];
+  dataFilter: any = { nombre: '' };
   p: number = 1;
 
   ngOnInit(): void {

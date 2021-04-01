@@ -13,9 +13,18 @@ export class DialogEspecieComponent implements OnInit {
   constructor( public dialogRef: MatDialogRef < any >,
     @Inject(MAT_DIALOG_DATA) public data: any,
     public _services: CrudService) { }
+    response:any;
+    familia:any []=[];
 
     ngOnInit(): void {
       console.log(this.data);
+      this._services.get("familia").then(m => {
+        this.response = m;
+        console.log(this.response);
+        if(this.response.success){
+          this.familia = this.response.data;
+        }
+      })
     }
    
     guardar(){

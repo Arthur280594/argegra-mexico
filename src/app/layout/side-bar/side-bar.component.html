@@ -57,3 +57,26 @@
     
 
   </div>
+
+  <div class="slide">
+
+    <p class="title">MAIN NAVIGATION</p>
+  
+  <hr>
+
+
+  <div id="accordiondos">
+    <div id="headingOneDos">
+      <div class="menu collapsed" data-toggle="collapse" data-target="#collapseOneDos" aria-expanded="true"
+        aria-controls="collapseOne">
+        <mat-icon class="icon">room</mat-icon>
+        <p class="name">Mapa</p>
+        <div class="arrow"></div>
+      </div>
+    </div>
+
+    <div id="collapseOneDos" class="submenu collapse" aria-labelledby="headingOne" data-parent="#accordiondos">
+      <div class="item" [routerLink]="['/mapa']" routerLinkActive="router-link-active" >Mapa</div>
+    </div>  
+
+  </div>

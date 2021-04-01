@@ -11,23 +11,22 @@
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Folio</mat-label>
-        <input matInput placeholder="Folio">
+        <input matInput placeholder="Folio"  [(ngModel)]="data.folio">
       </mat-form-field>
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Fecha</mat-label>
-        <input matInput placeholder="Fecha">
+        <input  matInput type="date" placeholder="Fecha" [(ngModel)]="data.fecha">
       </mat-form-field>
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Especie</mat-label>
-        <mat-select required>
-          <mat-option [value]="1">1</mat-option>
-          <mat-option [value]="2">2</mat-option>
+        <mat-select required [(ngModel)]="data.id_especie">
+          <mat-option *ngFor="let item of especie" [value]="item.id_especie" >{{item.nombre_comun}}</mat-option>
         </mat-select>
       </mat-form-field>
     </mat-grid-tile>
@@ -36,7 +35,7 @@
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Bacterias</mat-label>
-        <input matInput placeholder="Bacterias">
+        <input matInput placeholder="Bacterias" [(ngModel)]="data.bacterias">
       </mat-form-field>
     </mat-grid-tile>
 
@@ -44,35 +43,35 @@
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Parasitos </mat-label>
-        <input matInput placeholder="Parasitos">
+        <input matInput placeholder="Parasitos" [(ngModel)]="data.paracitos">
       </mat-form-field>
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Virus</mat-label>
-        <input matInput placeholder="Virus">
+        <input matInput placeholder="Virus" [(ngModel)]="data.virus">
       </mat-form-field>
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Hongos</mat-label>
-        <input matInput placeholder="Hongos">
+        <input matInput placeholder="Hongos" [(ngModel)]="data.hongos">
       </mat-form-field>
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Laboratorio presuntivo</mat-label>
-        <input matInput placeholder="Laboratorio presuntivo">
+        <input matInput placeholder="Laboratorio presuntivo" [(ngModel)]="data.laboratorio_presuntivo">
       </mat-form-field>
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Diagnostico presuntivo</mat-label>
-        <input matInput placeholder="Diagnostico presuntivo">
+        <input matInput placeholder="Diagnostico presuntivo" [(ngModel)]="data.diagnostico_presuntivo">
       </mat-form-field>
     </mat-grid-tile>
 
@@ -80,14 +79,14 @@
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Laboratorio oficial</mat-label>
-        <input matInput placeholder="Laboratorio oficial">
+        <input matInput placeholder="Laboratorio oficial" [(ngModel)]="data.laboratorio_oficial" >
       </mat-form-field>
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Fecha envio </mat-label>
-        <input matInput placeholder="Fecha envio">
+        <input type="date" matInput placeholder="Fecha envio" [(ngModel)]="data.fecha_envio">
       </mat-form-field>
     </mat-grid-tile>
 
@@ -95,7 +94,7 @@
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Fecha entrega </mat-label>
-        <input matInput placeholder="Fecha entrega">
+        <input type="date" matInput placeholder="Fecha entrega" [(ngModel)]="data.fecha_entrega">
       </mat-form-field>
     </mat-grid-tile>
 
@@ -104,7 +103,7 @@
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Prevalencia </mat-label>
-        <input matInput placeholder="Prevalencia">
+        <input matInput placeholder="Prevalencia" [(ngModel)]="data.prevalencia">
       </mat-form-field>
     </mat-grid-tile>
 
@@ -112,23 +111,22 @@
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Incidencia </mat-label>
-        <input matInput placeholder="Incidencia">
+        <input matInput placeholder="Incidencia" [(ngModel)]="data.incidencia">
       </mat-form-field>
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Formato 1 </mat-label>
-        <input matInput placeholder="Formato 1">
+        <input matInput placeholder="Formato 1" [(ngModel)]="data.formato_1acol">
       </mat-form-field>
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Tipo Analisis</mat-label>
-        <mat-select required>
-          <mat-option [value]="1">1</mat-option>
-          <mat-option [value]="2">2</mat-option>
+        <mat-select required [(ngModel)]="data.id_tipo_analisis">
+          <mat-option *ngFor="let item of tipo_analisis" [value]="item.id_tipo_analisis" >{{item.nombre}}</mat-option>
         </mat-select>
       </mat-form-field>
     </mat-grid-tile>
@@ -136,9 +134,8 @@
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Enfermedad</mat-label>
-        <mat-select required>
-          <mat-option [value]="1">1</mat-option>
-          <mat-option [value]="2">2</mat-option>
+        <mat-select required [(ngModel)]="data.id_enfermedad">
+          <mat-option *ngFor="let item of enfermedades" [value]="item.id_enfermedad" >{{item.nombre}}</mat-option>
         </mat-select>
       </mat-form-field>
     </mat-grid-tile>
@@ -159,5 +156,5 @@
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">
-  <button mat-raised-button>Guardar</button>
+  <button  mat-raised-button (click)="guardar()">Guardar</button>
 </mat-dialog-actions>

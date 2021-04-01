@@ -12,19 +12,15 @@
       <mat-grid-tile [colspan]="1" [rowspan]="1">
         <mat-form-field appearance="legacy">
           <mat-label>Enfermedad</mat-label>
-          <input matInput placeholder="Enfermedad">
+          <input matInput placeholder="Enfermedad" [(ngModel)]="data.nombre">
         </mat-form-field>
       </mat-grid-tile>
-  
-      
-  
-  
+
       <mat-grid-tile [colspan]="1" [rowspan]="1">
         <mat-form-field appearance="legacy">
           <mat-label>Especie</mat-label>
-          <mat-select required>
-            <mat-option [value]="1">1</mat-option>
-            <mat-option [value]="2">2</mat-option>
+          <mat-select required [(ngModel)]="data.id_especie">
+            <mat-option *ngFor="let item of especie" [value]="item.id_especie" >{{item.nombre_comun}}</mat-option>
           </mat-select>
         </mat-form-field>
       </mat-grid-tile>
@@ -32,7 +28,7 @@
       <mat-grid-tile [colspan]="1" [rowspan]="1">
         <mat-form-field appearance="legacy">
           <mat-label>Estado</mat-label>
-          <input matInput placeholder="Estado">
+          <input matInput placeholder="Estado" [(ngModel)]="data.estado">
         </mat-form-field>
       </mat-grid-tile>
 
@@ -40,6 +36,6 @@
   </mat-dialog-content>
   
   <mat-dialog-actions align="end">
-    <button mat-raised-button>Guardar</button>
+    <button mat-raised-button (click)="guardar()">Guardar</button>
   </mat-dialog-actions>
   

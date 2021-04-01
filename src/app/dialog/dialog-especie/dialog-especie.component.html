@@ -28,7 +28,7 @@
       <mat-form-field appearance="legacy">
         <mat-label>Familia</mat-label>
         <mat-select required [(ngModel)]="data.id_familia">
-          <mat-option [value]="data.nombre"></mat-option>
+          <mat-option *ngFor="let item of familia" [value]="item.id_familia">{{item.nombre}}</mat-option>
          
         </mat-select>
       </mat-form-field>
