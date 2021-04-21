@@ -11,24 +11,23 @@
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>OASA</mat-label>
-        <input matInput placeholder="OASA">
+        <input matInput placeholder="OASA"  [(ngModel)]="data.oasa">
       </mat-form-field>
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Registro</mat-label>
-        <input matInput placeholder="Registro">
+        <input matInput placeholder="Registro" [(ngModel)]="data.registro">
       </mat-form-field>
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Especie</mat-label>
-        <mat-select required>
-          <mat-option [value]="1">1</mat-option>
-          <mat-option [value]="2">2</mat-option>
-        </mat-select>
+          <mat-select required [(ngModel)]="data.ids_especies">
+            <mat-option *ngFor="let item of especie" [value]="item.id_especie" >{{item.nombre_comun}}</mat-option>
+          </mat-select>
       </mat-form-field>
     </mat-grid-tile>
 
@@ -36,7 +35,7 @@
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Dirección</mat-label>
-        <input matInput placeholder="Dirección">
+        <input matInput placeholder="Dirección" [(ngModel)]="data.direccion">
       </mat-form-field>
     </mat-grid-tile>
 
@@ -44,23 +43,22 @@
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Latitud</mat-label>
-        <input matInput placeholder="Latitud">
+        <input matInput placeholder="Latitud" [(ngModel)]="data.latutud">
       </mat-form-field>
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Longitud</mat-label>
-        <input matInput placeholder="Longitud">
+        <input matInput placeholder="Longitud" [(ngModel)]="data.longitud">
       </mat-form-field>
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Entidad Federativa</mat-label>
-        <mat-select required>
-          <mat-option [value]="1">1</mat-option>
-          <mat-option [value]="2">2</mat-option>
+        <mat-select [(ngModel)]="data.id_entidad_federativa" required>
+          <mat-option *ngFor="let item of entidad_federativa" [value]="item.id_entidad_federativa">{{item.nombre}}</mat-option>
         </mat-select>
       </mat-form-field>
     </mat-grid-tile>
@@ -68,9 +66,8 @@
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Familia</mat-label>
-        <mat-select required>
-          <mat-option [value]="1">1</mat-option>
-          <mat-option [value]="2">2</mat-option>
+        <mat-select required [(ngModel)]="data.id_familia">
+          <mat-option *ngFor="let item of familia" [value]="item.id_familia">{{item.nombre}}</mat-option>
         </mat-select>
       </mat-form-field>
     </mat-grid-tile>
@@ -80,7 +77,7 @@
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">
-  <button mat-raised-button>Guardar</button>
+  <button  mat-raised-button (click)="guardar()">Guardar</button>
 </mat-dialog-actions>
 
   
