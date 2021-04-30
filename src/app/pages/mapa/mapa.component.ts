@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogMapaComponent } from 'src/app/dialog/dialog-mapa/dialog-mapa.component';
 import { CrudService } from 'src/app/services/crud/crud.service';
 
 @Component({
@@ -26,9 +28,9 @@ export class MapaComponent implements OnInit {
     }
   ];*/
 
-  constructor(public service: CrudService) { }
+  constructor(public service: CrudService, public _dialog: MatDialog) { }
 
-  data: any[];
+  data:       any[]   = [];
 
   ngOnInit(): void {
     this.service.get('getMapa').then(r => {
@@ -59,8 +61,16 @@ export class MapaComponent implements OnInit {
   }
 
   yourComponentMethod(event) {
-    console.log(this.markers[event.rowClicked].detalles);
 
+    const dialogRef = this._dialog.open(DialogMapaComponent
+      ,{
+        data: this.markers[event.rowClicked].detalles,
+        width: "20%"
+      });
+    console.log(this.markers[event.rowClicked].detalles);
+    dialogRef.afterClosed().subscribe(result => {
+      this.ngOnInit
+    });
   }
 
 }

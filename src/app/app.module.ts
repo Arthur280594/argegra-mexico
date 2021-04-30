@@ -59,6 +59,7 @@ import { FormsModule } from '@angular/forms';
 import { FilterPipeModule } from 'ngx-filter-pipe';
 import { MapaComponent } from './pages/mapa/mapa.component';
 import { GoogleMapsAngularModule } from 'google-maps-angular';
+import { DialogMapaComponent } from './dialog/dialog-mapa/dialog-mapa.component';
 
 
 
@@ -96,6 +97,7 @@ const avatarColors = ["#ff8340"];
     DialogEntidadFederativaComponent,
     DialogEnfermedadesComponent,
     MapaComponent,
+    DialogMapaComponent,
   ],
   imports: [
     BrowserModule,

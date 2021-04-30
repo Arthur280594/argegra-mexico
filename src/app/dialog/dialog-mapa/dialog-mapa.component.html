@@ -1,0 +1,19 @@
+<div style="display: flex; justify-content: space-between;">
+    <h2 mat-dialog-title class="modal-form__title"></h2>
+
+    <mat-icon [mat-dialog-close]="true" style="cursor:pointer">close</mat-icon>
+
+</div>
+<mat-label>
+     <mat-label>OASA: {{ data.oasa }}</mat-label><br>
+     <mat-label>Registro: {{ data.registro }}</mat-label><br>
+     <mat-label>Estado: {{ data.entidad_Federativa }}</mat-label><br>
+     <mat-label  *ngFor="let especie of data.especies" > Especie: {{ especie.nombre_comun }} </mat-label><br>
+     <mat-label> Familia: {{ data.familia }}</mat-label><br>
+     <mat-label>Lat: {{ data.latutud }}, </mat-label><br>
+     <mat-label>Long: {{ data.longitud }}</mat-label>
+     
+  </mat-label>
+
+
+<mat-dialog-actions align="end">
