@@ -15,6 +15,7 @@ export class DialogFormatoBComponent implements OnInit {
                public _services: CrudService) { }
                response:any;
                entidad_federativa:any []=[];
+               padron: any []=[];
 
   ngOnInit(): void {
     console.log(this.data);
@@ -26,6 +27,14 @@ export class DialogFormatoBComponent implements OnInit {
         if(this.response.success){
           this.entidad_federativa = this.response.data;
         }
+      })
+      this._services.get('getPadronAcuicola').then(m => {
+        this.response = m;
+        console.log(this.response);
+        if(this.response.success){
+          this.padron = this.response.data;
+        }
+        
       })
   }
   guardar(){

@@ -68,7 +68,7 @@ export class TipoUsuarioComponent implements OnInit {
       cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.crud.post('delete_tipo_agente',item).then(r => {
+        this.crud.post('delete_tipo_usuarios',item).then(r => {
           console.log(r)
           let response:any = r;
             if(response.success){

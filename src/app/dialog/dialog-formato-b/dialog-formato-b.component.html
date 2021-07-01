@@ -17,7 +17,7 @@
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Entidad Federativa</mat-label>
-        <mat-select [(ngModel)]="data.id_entidad_federativa" required>
+        <mat-select [(ngModel)]="data.entidad_federativa_id_entidad_federativa" required>
           <mat-option *ngFor="let item of entidad_federativa" [value]="item.id_entidad_federativa">{{item.nombre}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -26,9 +26,8 @@
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-form-field appearance="legacy">
         <mat-label>Padrón Acuícola </mat-label>
-        <mat-select required>
-          <mat-option [value]="1">1</mat-option>
-          <mat-option [value]="2">2</mat-option>
+          <mat-select [(ngModel)]="data.padron_acuicola_id_padron_acuicola" required>
+            <mat-option *ngFor="let item of padron" [value]="item.id_padron_acuicola">{{item.oasa}}</mat-option>
         </mat-select>
       </mat-form-field>
     </mat-grid-tile>

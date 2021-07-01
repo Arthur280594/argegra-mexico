@@ -17,6 +17,7 @@ export class DialogFormato1aComponent implements OnInit {
     especie:any []=[];
     tipo_analisis:any []=[];
     enfermedades:any []=[];
+    padron: any []=[];
 
   ngOnInit(): void {
     console.log(this.data);
@@ -43,6 +44,14 @@ export class DialogFormato1aComponent implements OnInit {
       if(this.response.success){
         this.enfermedades = this.response.data;
       }
+    })
+    this._services.get('getPadronAcuicola').then(m => {
+      this.response = m;
+      console.log(this.response);
+      if(this.response.success){
+        this.padron = this.response.data;
+      }
+      
     })
   }
 

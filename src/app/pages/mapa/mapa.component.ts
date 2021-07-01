@@ -31,15 +31,18 @@ export class MapaComponent implements OnInit {
   constructor(public service: CrudService, public _dialog: MatDialog) { }
 
   data:       any[]   = [];
+  userdata: any = { };
 
-  ngOnInit(): void {
+  ngOnInit(): void {this.userdata = JSON.parse (localStorage.getItem ("user"));
     this.service.get('getMapa').then(r => {
       let a: any = r;
       if (a.success) {
         //this.markers = a.data;
+        console.log (a.data);
 
         for (let i = 0; i < a.data.length; i++) {
           const element = a.data[i];
+
           let f = {
             lat: element.latutud,
             long: element.longitud,
@@ -51,7 +54,12 @@ export class MapaComponent implements OnInit {
             },
             detalles: element
           }
-          this.markers.push(f)
+          if (element.id_entidad_federativa == this.userdata.id_entidad_federativa && this.userdata.tipo_usuario == "2" ){
+            this.markers.push(f)
+          }
+          if (this.userdata.tipo_usuario == "1" || this.userdata.tipo_usuario == "3"){
+            this.markers.push(f)
+          }
         }
         console.log(this.markers);
       }

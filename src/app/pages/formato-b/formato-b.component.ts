@@ -100,7 +100,7 @@ export class FormatoBComponent implements OnInit {
       cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.crud.post('delete_familia',item).then(r => {
+        this.crud.post('delete_formato_1b',item).then(r => {
           console.log(r)
           let response:any = r;
             if(response.success){
